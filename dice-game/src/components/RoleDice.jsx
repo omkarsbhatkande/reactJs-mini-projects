@@ -2,18 +2,11 @@ import styled from "styled-components";
 import { useState } from "react";
 
 const RollDice = (
-  { diceNumber,setDiceNumber }
+  { rollDice, diceNumber }
 ) => {
   
 
-  const generateNumber = (min, max) => {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-  };
 
-  const rollDice = () => {
-    const number = generateNumber(1, 6);
-    setDiceNumber(number);
-  };
 
   return (
     <DiceContainer>

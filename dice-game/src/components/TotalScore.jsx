@@ -1,9 +1,9 @@
 import styled from "styled-components"
 
-const TotalScore = () => {
+const TotalScore = ({score}) => {
   return (
     <ScoreContainer>
-      <h2>0</h2>
+      <h2>{score}</h2>
       <p>Your Score</p>
     </ScoreContainer>
   )
