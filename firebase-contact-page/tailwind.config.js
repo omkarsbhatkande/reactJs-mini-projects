@@ -9,7 +9,7 @@ export default {
       colors:{
         gray:"#5a5959",
         yellow:"#ffeaae",
-        dark-yellow:"#fcc13f",
+        "dark-yellow":"#fcc13f",
         orange:"#f6820c",
       }
     },
