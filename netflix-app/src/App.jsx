@@ -1,3 +1,4 @@
+import NetfliexSeries from "./components/NetfliexSeries"
 
 
 const App = () => {
@@ -5,7 +6,7 @@ const App = () => {
 
   return (
     <div>
-     
+     <NetfliexSeries />
     </div>
   )
 }
