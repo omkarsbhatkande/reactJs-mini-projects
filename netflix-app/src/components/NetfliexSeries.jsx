@@ -4,7 +4,7 @@ import Lists from "./Lists"
 const NetfliexSeries = () => {
   return (
     <>
-    <ul>
+    <ul className="grid grid-three-cols">
       {series.map((currElem)=>{ 
         return  <Lists key={currElem.id} currElem={currElem} />
          })}
