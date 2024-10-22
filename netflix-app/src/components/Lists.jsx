@@ -1,13 +1,15 @@
 
 
 const Lists = (currElem) => {
-  const {id,img_url,name,rating,description,genre,cast,watch_url} = currElem;
+  const {name,rating,description,genre,cast,watch_url} = currElem;
+  console.log(currElem);
+  
   return (
     <div>
         
-        <li key={id}>
+        <li >
        <div>
-        <img src={img_url} alt="" width="40%" height="40%" />
+        {/* <img src=alt="" width="40%" height="40%" /> */}
       </div>
       <h2>Name   :  {name}</h2>
       <h3>Rating : {rating} </h3>

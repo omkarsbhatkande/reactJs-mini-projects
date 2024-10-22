@@ -13,4 +13,4 @@ const NetfliexSeries = () => {
   )
 }
 
-export default NetfliexSeries
+export default NetfliexSeries;
