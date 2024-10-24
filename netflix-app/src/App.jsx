@@ -1,6 +1,7 @@
 //import "../index.css";
 
-import NetfliexSeries from "./components/NetfliexSeries"
+import EventHandle from "./components/EventHandle"
+//import NetfliexSeries from "./components/NetfliexSeries"
 
 
 const App = () => {
@@ -8,7 +9,8 @@ const App = () => {
 
   return (
     <div className="container">
-     <NetfliexSeries />
+     {/* <NetfliexSeries /> */}
+     <EventHandle />
     </div>
   )
 }
