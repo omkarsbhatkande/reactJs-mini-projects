@@ -1,6 +1,8 @@
 //import "../index.css";
 
-import EventHandle from "./components/EventHandle"
+import UseState from "./components/UseState"
+
+//import EventHandle from "./components/EventHandle"
 //import NetfliexSeries from "./components/NetfliexSeries"
 
 
@@ -10,7 +12,8 @@ const App = () => {
   return (
     <div className="container">
      {/* <NetfliexSeries /> */}
-     <EventHandle />
+     {/* <EventHandle /> */}
+     <UseState />
     </div>
   )
 }
