@@ -1,13 +1,13 @@
 //import React from 'react'
 import Todo from "./Todo";
 
-const TodoContainer = ({todos}) => {
+const TodoContainer = ({todos,deleteTodo}) => {
   return (
     <div>
       <div className="task-container">
-        {todos.map((todo)=>{
+        {todos.map((todo,index)=>{
           return (
-            <Todo todo={todo} />
+            <Todo todo={todo} index={index} deleteTodo={deleteTodo} />
           )
         })}
       </div>

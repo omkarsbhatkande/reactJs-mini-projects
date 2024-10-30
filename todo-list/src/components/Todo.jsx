@@ -1,13 +1,13 @@
 //import React from 'react'
 
-const Todo = ({todo}) => {
+const Todo = ({todo,index,deleteTodo}) => {
   return (
     <div>
       <div className="todo">
         <p>{todo}</p>
         <div className="action">
           <input type="checkbox" name="" id="" />
-          <button>Delete</button>
+          <button onClick={()=>deleteTodo(index)}>Delete</button>
         </div>
       </div>
     </div>
