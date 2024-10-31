@@ -4,7 +4,9 @@
 
 //import EventHandle from "./components/EventHandle"
 //import NetfliexSeries from "./components/NetfliexSeries"
-import Forms from "./components/Forms"
+import DericalState from "./components/DericalState"
+import DerivativeState from "./components/DerivativeState"
+//import Forms from "./components/Forms"
 
 
 const App = () => {
@@ -15,8 +17,12 @@ const App = () => {
      {/* <NetfliexSeries /> */}
      {/* <EventHandle /> */}
      {/* <UseState /> */}
-     <Forms />
+     {/* <Forms /> */}
+     {/* <DericalState /> */}
+
+     <DerivativeState />
     </div>
+    
   )
 }
 
