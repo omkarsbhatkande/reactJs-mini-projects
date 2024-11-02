@@ -3,7 +3,7 @@
 const WatchList = () => {
   return (
     <div>
-      watch
+      watch list
     </div>
   )
 }
