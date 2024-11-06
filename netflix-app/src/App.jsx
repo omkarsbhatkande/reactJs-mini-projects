@@ -6,10 +6,10 @@
 //import NetfliexSeries from "./components/NetfliexSeries"
 // import DericalState from "./components/DericalState"
 // import DerivativeState from "./components/DerivativeState"
-import Toggle from "./projects/toogle/Toggle"
+//import Toggle from "./projects/toogle/Toggle"
 //import Forms from "./components/Forms"
 
-
+import Todo from "./projects/todo/Todo"
 const App = () => {
 
 
@@ -22,7 +22,9 @@ const App = () => {
      {/* <DericalState /> */}
 
      {/* <DerivativeState /> */}
-     <Toggle />
+     {/* <Toggle /> */}
+
+     <Todo />
 
 
 
