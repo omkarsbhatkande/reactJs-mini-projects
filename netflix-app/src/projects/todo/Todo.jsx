@@ -1,18 +1,25 @@
 //import React from 'react'
 import { useState } from 'react'
+import { FaCheckCircle } from "react-icons/fa";
+import { MdDelete } from "react-icons/md";
 import './todo.css'
 
 const Todo = () => {
 
   const [text ,setText]= useState("");
+  const [task , setTask] = useState([]);
 
  const handleInputChange=(e)=>{
     setText(e)
-    console.log(e);
+    //console.log(e);
   };
 
   const handleFormSubmit=(e)=>{
     e.preventDefault();
+    if(!text) return;
+    if(task.includes(setText)) return;
+    setTask((prev)=>[...prev,text])
+    setText("");
   };
 
   return (
@@ -29,6 +36,17 @@ const Todo = () => {
               <button type='submit' className='todo-btn'>add Task</button>
             </dir>
           </form>
+      </section>
+      <section className='myUnOrdList'>
+        <ul>
+          {task.map((e,index)=>{
+            return <li key={index} className='todo-item'>
+              <span>{e}</span>
+              <button className='check-btn'><FaCheckCircle /></button>
+              <button className='delete-btn'><MdDelete /></button>
+            </li>
+          })}
+        </ul>
       </section>
     </div>
   )
