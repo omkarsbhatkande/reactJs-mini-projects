@@ -1,5 +1,5 @@
 //import React from 'react'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { FaCheckCircle } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 import './todo.css'
@@ -8,6 +8,7 @@ const Todo = () => {
 
   const [text ,setText]= useState("");
   const [task , setTask] = useState([]);
+  const [date , setDate]= useState();
 
  const handleInputChange=(e)=>{
     setText(e)
@@ -22,14 +23,22 @@ const Todo = () => {
     setText("");
   };
 
-  const now = new Date();
-  const fomartDate = now.toLocaleString();
+  setInterval((setDate)=>{
+    const now = new Date();
+    const setDate = now.toLocaleString();
+  },1000)
+
+
+  useEffect(()=>{},[])
+
+
+
 
   return (
     <div className='todo-container'>
       <header>
         <h1>Todo List</h1>
-        <h2 className='date-time'>{fomartDate}</h2>
+        <h2 className='date-time'>{FormData}</h2>
       </header>
       <section className='form'>
           <form onSubmit={handleFormSubmit}>
