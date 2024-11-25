@@ -8,7 +8,7 @@ const Todo = () => {
 
   const [text ,setText]= useState("");
   const [task , setTask] = useState([]);
-  const [date , setDate]= useState();
+  const [date , setDate]= useState("");
 
  const handleInputChange=(e)=>{
     setText(e)
@@ -23,13 +23,32 @@ const Todo = () => {
     setText("");
   };
 
-  setInterval((setDate)=>{
-    const now = new Date();
-    const setDate = now.toLocaleString();
-  },1000)
+
+  //todo handle delete function
+  const handleDeleteTodo=(value)=>{
+  //  console.log(task);
+  //   console.log(value);
+    const updatedTask = task.filter((curTask)=>curTask !== value );
+    setTask(updatedTask);
+  }
+
+  //todo clear function
+
+  const handleClearTodo = ()=>{
+    setTask([]);
+  }
 
 
-  useEffect(()=>{},[])
+
+
+  useEffect(()=>{
+    const interval = setInterval(()=>{
+      const now = new Date();
+      const now1 = now.toLocaleString();
+      setDate(`${now1}`)
+    },1000) 
+    return ()=> clearInterval(interval) 
+  },[])
 
 
 
@@ -38,7 +57,7 @@ const Todo = () => {
     <div className='todo-container'>
       <header>
         <h1>Todo List</h1>
-        <h2 className='date-time'>{FormData}</h2>
+        <h2 className='date-time'>{date}</h2>
       </header>
       <section className='form'>
           <form onSubmit={handleFormSubmit}>
@@ -56,10 +75,13 @@ const Todo = () => {
             return <li key={index} className='todo-item'>
               <span>{e}</span>
               <button className='check-btn'><FaCheckCircle /></button>
-              <button className='delete-btn'><MdDelete /></button>
+              <button className='delete-btn' onClick={()=>handleDeleteTodo(e)}><MdDelete /></button>
             </li>
           })}
         </ul>
+      </section>
+      <section>
+        <button className='clear-btn' onClick={handleClearTodo}>Clear All</button>
       </section>
     </div>
   )
