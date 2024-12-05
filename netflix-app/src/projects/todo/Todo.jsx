@@ -1,27 +1,20 @@
 //import React from 'react'
-import { useEffect, useState } from 'react'
-import { FaCheckCircle } from "react-icons/fa";
-import { MdDelete } from "react-icons/md";
+import { useState } from 'react'
 import './todo.css'
+import TodoForm from './TodoForm';
+import TodoList from './TodoList';
+import TodoDate from './TodoDate';
 
 const Todo = () => {
 
-  const [text ,setText]= useState("");
   const [task , setTask] = useState([]);
-  const [date , setDate]= useState("");
-
- const handleInputChange=(e)=>{
-    setText(e)
-    //console.log(e);
-  };
-
-  const handleFormSubmit=(e)=>{
-    e.preventDefault();
+  
+    //todo handle FormSubmit function
+  const handleFormSubmit=(text)=>{ 
     if(!text) return;
-    if(task.includes(setText)) return;
-    setTask((prev)=>[...prev,text])
-    setText("");
-  };
+    if(task.includes(text)) return;
+  setTask((prevTask)=>[...prevTask , text]);
+};
 
 
   //todo handle delete function
@@ -33,50 +26,21 @@ const Todo = () => {
   }
 
   //todo clear function
-
   const handleClearTodo = ()=>{
     setTask([]);
   }
-
-
-
-
-  useEffect(()=>{
-    const interval = setInterval(()=>{
-      const now = new Date();
-      const now1 = now.toLocaleString();
-      setDate(`${now1}`)
-    },1000) 
-    return ()=> clearInterval(interval) 
-  },[])
-
-
-
 
   return (
     <div className='todo-container'>
       <header>
         <h1>Todo List</h1>
-        <h2 className='date-time'>{date}</h2>
+        <TodoDate />
       </header>
-      <section className='form'>
-          <form onSubmit={handleFormSubmit}>
-            <div>
-              <input type="text" className='todo-input' autoComplete='off' value={text} onChange={(e)=>handleInputChange(e.target.value)} />
-            </div>
-            <dir>
-              <button type='submit' className='todo-btn'>add Task</button>
-            </dir>
-          </form>
-      </section>
+       <TodoForm onAddTodo={handleFormSubmit}  />
       <section className='myUnOrdList'>
         <ul>
           {task.map((e,index)=>{
-            return <li key={index} className='todo-item'>
-              <span>{e}</span>
-              <button className='check-btn'><FaCheckCircle /></button>
-              <button className='delete-btn' onClick={()=>handleDeleteTodo(e)}><MdDelete /></button>
-            </li>
+            return <TodoList key={index} data={e} onHandleDeleteTodo={handleDeleteTodo} />
           })}
         </ul>
       </section>
